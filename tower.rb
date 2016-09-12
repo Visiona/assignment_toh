@@ -7,17 +7,17 @@ def render(rods, height)
   until height == 0
     rods_int.each do |rod_no|
       if rod_no[height-1] == nil
-        print ("  "*4 + "  "*fixed_height)
-      elsif rod_no[height-1].odd?
-        print ("  "*4 + "  "*((fixed_height - rod_no[height-1])/2) + "==" * rod_no[height-1] + "  "*((fixed_height-rod_no[height-1])/2))
+        print ("  "*4 + "  "*fixed_height) #if no disks are on the rod
+      elsif rod_no[height-1].odd? #if the disk size is odd so we can align it
+        print ("  "*4 + " " * 1 + "  "*((fixed_height - rod_no[height-1])/2) + "==" * rod_no[height-1] + " " * 1 + "  "*((fixed_height*2-rod_no[height-1]*2)/4))
       else
-        print ("  "*4 + " "*1 + "  "*((fixed_height - rod_no[height-1])/2) + "==" * rod_no[height-1] + "  "*((fixed_height-rod_no[height-1])/2))
+        print ("  "*4 + "  "*((fixed_height - rod_no[height-1])/2) + "==" * rod_no[height-1] + "  "*((fixed_height-rod_no[height-1])/2))
       end
     end
     print "\n"
     height -= 1
   end
-  1.upto(3) {|i| print ("  "*4 + "  "*(fixed_height/2) + "#{i}" + "   ")}
+  1.upto(3) {|i| print ("  "*4 + "  "*(fixed_height/2) + "#{i}" + " "*(fixed_height/2+i*3 + i%2))}
   print "\n"
 end
 
