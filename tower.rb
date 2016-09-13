@@ -17,12 +17,12 @@ def render(rods, height)
     print "\n"
     height -= 1
   end
-  1.upto(3) {|i| print ("  "*4 + "  "*(fixed_height/2) + "#{i}" + " "*(fixed_height/2+i*3 + i%2))}
+  1.upto(3) {|i| print ("  "*4 + "  "*(fixed_height/2) + "#{i}" + " "*(fixed_height/2+i))}
   print "\n"
 end
 
 def is_valid(move, height)
-  if move.length == 3 && (1..height) === move[0].to_i && (1..height) === move[2].to_i && "," == move[1]
+  if move.length == 3 && (1..3) === move[0].to_i && (1..3) === move[2].to_i && "," == move[1]
     true
   else
     puts "You have typed incorrect parameters."
