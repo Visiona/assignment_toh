@@ -1,5 +1,3 @@
-
-
 def render(rods, height)
   puts "#{rods}"
   fixed_height = height
@@ -7,11 +5,10 @@ def render(rods, height)
   until height == 0
     rods_int.each do |rod_no|
       if rod_no[height-1] == nil
-        print ("  "*4 + "  "*fixed_height) #if no disks are on the rod
-      elsif rod_no[height-1].odd? #if the disk size is odd so we can align it
-        print ("  "*4 + " " * 1 + "  "*((fixed_height - rod_no[height-1])/2) + "==" * rod_no[height-1] + " " * 1 + "  "*((fixed_height*2-rod_no[height-1]*2)/4))
-      else
-        print ("  "*4 + "  "*((fixed_height - rod_no[height-1])/2) + "==" * rod_no[height-1] + "  "*((fixed_height-rod_no[height-1])/2))
+        print "  " * 4 + "  ".center(height*2) #if no disks are on the rod
+      else #if the disk size is odd so we can align it
+        #print ("  "*4 + " " * 1 + "  "*((fixed_height - rod_no[height-1])/2) + "==" * rod_no[height-1] + " " * 1 + "  "*((fixed_height*2-rod_no[height-1]*2)/4))
+        print "  " * 4 + ("=="* rod_no[height-1]).center(height*2)
       end
     end
     print "\n"
@@ -69,3 +66,5 @@ def tower_of_hanoi(height)
     puts "Congratulations. You have won the game. Good Job!" if rod_1.empty? && (rod_2.empty? || rod_3.empty?)
   end
 end
+
+tower_of_hanoi(4)
