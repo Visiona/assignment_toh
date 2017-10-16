@@ -1,7 +1,9 @@
 
-#  Tower of Hanoi Game in Ruby (draft)
+#  Tower of Hanoi Game in Ruby (procedural draft)
 
 Tower of Hanoi is a game that requires players to move a stack of disks from one space (or rod) to another. Never to a stack with top plate larger then the one player wants to put on. It is procedural code in Ruby.
+
+Object Oriented complete version of Tower of Hanoi is available in the following respository: https://github.com/Visiona/assignment_oop_warmups_1 
 
 ## Getting Started
 
